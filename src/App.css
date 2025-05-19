@@ -1,0 +1,695 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  /* Remove any constraints that limit full width/height */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* App container - make it use full screen */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Navigation - make it full width */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2c3e50;
+  color: white;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem; /* Add some vertical spacing when wrapped */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #3498db;
+}
+
+/* Main content - use full width with responsive padding */
+.content {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%; /* Allow content to use full width */
+}
+
+/* Footer - full width */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Page styles */
+.page {
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1800px; /* Increased max width but with a reasonable limit for very large screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page h1 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Forms - make them more responsive */
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* Home page */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Materials page */
+.materials-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.material-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.material-card h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.material-card button {
+  margin-top: 1rem;
+}
+
+/* About page */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.about-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Payment section */
+.payment-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Add modal styles to existing CSS */
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 95%;
+  max-width: 600px;
+  max-height: 95vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.payment-summary {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.btn.cancel {
+  background-color: #6c757d;
+}
+
+.btn.cancel:hover {
+  background-color: #5a6268;
+}
+
+/* Materials page enhancements */
+.materials-intro {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-dropdown {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.material-price {
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+/* Plans styling */
+.plans-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.plan-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.plan-card.selected {
+  border-color: #3498db;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0.5rem 0;
+}
+
+.plan-saving {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.plan-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.plan-features li {
+  padding: 0.3rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.plan-features li:before {
+  content: "✓";
+  color: #27ae60;
+  position: absolute;
+  left: 0;
+}
+
+.plan-select {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Payment section */
+.payment-section {
+  margin-top: 2rem;
+}
+
+.payment-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+.order-summary {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+/* Contact page enhancements */
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-method {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-method h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+/* About page enhancements */
+.about-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.team-member {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.team-member h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.values-list {
+  padding-left: 2rem;
+}
+
+.values-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* User greeting styles */
+.user-greeting {
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: white;
+  color: #2c3e50;
+}
+
+/* Welcome banner on home page */
+.welcome-banner {
+  background-color: #3498db;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.welcome-banner h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+/* Quick actions section */
+.quick-actions {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Feature buttons */
+.feature-btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Filter reset button */
+.filter-reset {
+  background-color: #6c757d;
+  padding: 0.5rem 1rem;
+}
+
+.filter-reset:hover {
+  background-color: #5a6268;
+}
+
+/* No materials message */
+.no-materials {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.no-materials p {
+  margin-bottom: 1.5rem;
+}
+
+/* Material description */
+.material-description {
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+/* Login prompt on upload page */
+.login-prompt {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.login-prompt .btn {
+  margin-top: 0.5rem;
+  background-color: #dc3545;
+}
+
+.login-prompt .btn:hover {
+  background-color: #c82333;
+}
+
+/* Error message */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Enhanced responsive styles */
+@media (max-width: 1024px) {
+  .page {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links li {
+    margin: 0.25rem 0.5rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Make cards full width on mobile */
+  .feature-card,
+  .material-card,
+  .plan-card,
+  .about-section,
+  .contact-method {
+    width: 100%;
+  }
+  
+  /* Adjust welcome banner */
+  .welcome-banner {
+    padding: 1rem;
+  }
+  
+  /* Make action buttons stack on mobile */
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem;
+  }
+  
+  .content {
+    padding: 0.75rem;
+  }
+  
+  .page h1 {
+    font-size: 1.8rem;
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+}
+
+/* Override any conflicting styles */
+body, html {
+  overflow-x: hidden;
+}
